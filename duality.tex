@@ -1,0 +1,231 @@
+\noindent
+\textit{Lagrangian}
+\begin{align*}
+min. \quad& f_0(x)\\
+s.t. \quad& f_i(x) \le 0 \quad i=1,\ldots,m\\
+\quad& h_i(x) = 0 \quad i=1,\ldots,p\\
+x \in R^n \quad& \mbox{Domain } 
+D = \bigcap_{i=0}^m dom f_i \cap \bigcap_{i=0}^p dom h_i
+\intertext{This problem need not be convex. Optimal value is \(p^*\)}
+\mbox{Lagrangian } 
+L(x,\lambda,\nu) &= f_0(x) + \sum_{i=0}^m \lambda_i f_i(x)
+ + \sum_{i=0}^p \nu_i h_i(x)\\
+L:R^n \times R^m \times R^p \rightarrow R&
+\quad dom L = D \times R^m \times R^p
+\end{align*}
+Dual variables (or) Lagrange multiplier vectors \(\lambda_i,  \nu_i\)\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Lagrange dual function}
+\begin{align*}
+g& : R^m \times R^p \rightarrow R\\
+g(\lambda. \nu) = \inf_{x \in D} L(x,\lambda,\nu) 
+&= \inf_{x \in D} \bigg( f_0(x) + \sum_{i=0}^m \lambda_i f_i(x)
+ + \sum_{i=0}^p \nu_i h_i(x) \bigg) \\
+\intertext{The dual function is the pointwise infimum of a family of affine
+functions of \((\lambda, \nu)\), it is \textbf{concave}, even when the 
+original problem is not convex}
+\mbox{For any }\lambda \succeq 0,&\mbox{ and }\nu, \quad 
+g(\lambda,\nu) \le p^*
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Lagrange dual function and conjugate function}
+\begin{align*}
+\mbox{Conjugate }f^*(y) &= \sup_{x \in dom f}(y^Tx - f(x))
+\intertext{Now consider}
+min. \quad& f_0(x)\\
+s.t. \quad& Ax \preceq b\\
+\quad& Cx = d \\
+g(\lambda,\nu) = -b^T\lambda - &d^T\nu - f_0^*(-A^T \lambda - C^T\nu)\\
+dom g = \{(\lambda,\nu) &| -A^T \lambda - C^T\nu \in dom f_0^*\}
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Lagrange dual problem}
+\begin{align*}
+max. \quad& g(\lambda,\nu)\\
+s.t. \quad& \lambda \succeq 0
+\end{align*}
+\((\lambda^*,\nu^*)\) is called dual optimal or optimal Lagrange 
+multipliers. Dual problem is always convex, since a concave function is 
+maximized, and the constraint is convex.\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Weak and Strong duality}
+\begin{align*}
+  \mbox{Weak duality}  \quad d^* &\le p^* \\
+  \mbox{Strong duality} \quad d^* &= p^*
+\end{align*}
+Strong duality holds when both the following conditions hold
+\begin{enumerate}
+\item primal problem is convex
+\item Slater's condition holds
+\end{enumerate}
+
+Primal \textit{convex} problem
+\begin{align*}
+min. \quad& f_0(x)\\
+s.t. \quad& f_i(x) \le 0, \quad i=1,\ldots,m\\
+\quad& Ax = b\\
+\mbox{with }& f_0,f_1,\ldots,f_m \mbox{ convex}
+\end{align*}
+
+\textit{Slater's condition} 
+There exists an \(x \in relint D\) such that
+\[f_i(x) < 0, \quad i=1,\ldots,m, \quad Ax=b\]
+
+\textit{Refined Slater's condition} 
+There exists an \(x \in relint D\) such that
+\[f_i(x) \le 0, \quad i=1,\ldots,k, \quad
+f_i(x) < 0, \quad i=k+1,\ldots,m, \quad Ax=b\]\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Complementary slackness}
+\begin{align*}
+f_0(x^*) &= g(\lambda^*,\nu^*) \quad \mbox{when strong duality holds}\\
+&= \inf_{x \in D} \bigg( f_0(x) + \sum_{i=0}^m \lambda_i^* f_i(x)
+ + \sum_{i=0}^p \nu_i^* h_i(x) \bigg) \\
+&\le f_0(x^*) + \sum_{i=0}^m \lambda_i^* f_i(x^*)
+ + \sum_{i=0}^p \nu_i^* h_i(x^*)\\
+&\le f_0(x^*)
+\end{align*}
+Hence the inequality must be a strict equality.
+Therefore \(x^*\) minimizes \(L(x,\lambda^*,\nu^*)\). Also,
+\[ \sum_{i=0}^m \lambda_i^* f_i(x^*) = 0\] which implies
+\[\mbox{Complementary slackness} \quad \lambda_i^* f_i(x^*) = 0 
+\quad i=1,\ldots,m\]\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Karush-Kuhn-Tucker (What names!) conditions} (KKT)
+\begin{align*}
+f_i(x^*) &\le 0 \quad i=1,\ldots,m\\
+h_i(x^*) &= 0 \quad i=1,\ldots,p\\
+\lambda_i^* &\ge 0 \quad i=1,\ldots,m\\
+\lambda_i^* f_i(x^*) &= 0 \quad i=1,\ldots,m\\
+\nabla f_0(x^*) + \sum_{i=0}^m  \lambda_i^* \nabla f_i(x^*)
+& + \sum_{i=0}^p \nu_i^* \nabla h_i(x^*) = 0
+\end{align*}
+
+Any optimization problem: Strong duality \(\implies\) KKT satisfied
+
+Convex optimization problem: KKT satisfied \(\implies\) Strong duality
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Solving primal via dual}
+
+Assume strong duality;
+dual optimal \((\lambda^*,\nu^*)\) is known; then primal optimal is 
+\begin{align*}
+min \quad f_0(x^*) + \sum_{i=0}^m \lambda_i^* f_i(x^*) + 
+  \sum_{i=0}^p \nu_i^* h_i(x^*)
+\end{align*}
+if it is primal feasible.\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Perturbed problem}
+\begin{align*}
+\mbox{minimize }\quad & f_0(x)\\
+\mbox{subject to }\quad &f_i(x) \le u_i, \quad i = 1, 2, \ldots, m\\
+&h_i(x) = \delta_i, \quad i = 1, 2, \ldots, p  
+\end{align*}
+Assume strong duality and dual optimal is attained.
+\begin{align*}
+  p^*(u,\delta) &\ge p^*(0,0) - \lambda^*{}^Tu - \nu^*{}^T \delta
+\intertext{If \(p^*(u,\delta)\) is differentialble 
+at \(u=0,\delta=0\), then}
+\lambda_i^* &= - \frac{\partial p^*(u,\delta)}{\partial u_i}
+\bigg|_{u=0,\delta=0}\\
+\nu_i^* &= - \frac{\partial p^*(u,\delta)}{\partial \delta_i}
+\bigg|_{u=0,\delta=0}
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+%\newpage
+\noindent
+\textit{Weak Alternatives}
+
+At most one of the inequality systems is feasible.
+
+\begin{multicols}{2}
+  \begin{align*}
+    f_i(x) &< 0 \quad i=1,\ldots,m\\
+    h_i(x) &= 0 \quad i=1,\ldots,p\\
+  \end{align*}
+  \begin{align*}\\
+    \lambda \succeq 0 \quad
+    \lambda &\ne 0\\
+    g(\lambda,\nu) &\ge 0
+  \end{align*}
+\end{multicols}
+\begin{multicols}{2}
+  \begin{align*}
+    f_i(x) &\le 0 \quad i=1,\ldots,m\\
+    h_i(x) &= 0 \quad i=1,\ldots,p\\
+  \end{align*}
+  \begin{align*}\\
+    \lambda &\succeq 0 \\
+    g(\lambda,\nu) &> 0
+  \end{align*}
+\end{multicols}
+\noindent
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Strong Alternatives}
+
+These are weak alternatives with original inequality system being 
+convex,
+i.e.\,, \(f_i\) are convex and \(h_i\) are affine. Each of the 
+inequality systems is feasible \textit{if and only if} 
+the other is infeasible.
+
+\begin{multicols}{2}
+  \begin{align*}
+    f_i(x) &< 0 \quad i=1,\ldots,m\\
+    Ax&=b \quad x \in relint D
+  \end{align*}
+  \begin{align*}\\
+    \lambda \succeq 0 \quad
+    \lambda &\ne 0\\
+    g(\lambda,\nu) &\ge 0
+  \end{align*}
+\end{multicols}
+
+\begin{multicols}{2}
+  \begin{align*}
+    f_i(x) &\le 0 \quad i=1,\ldots,m\\
+    Ax&=b \quad x \in relint D
+  \end{align*}
+  \begin{align*}\\
+    \lambda &\succeq 0 \\
+    g(\lambda,\nu) &> 0
+  \end{align*}
+\end{multicols}
+\noindent
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Farkas' lemma}\\
+A pair of strong alternatives
+\begin{multicols}{2}
+  \begin{align*}
+    c^Tx &< 0\\
+    Ax &\preceq 0
+  \end{align*}
+  \begin{align*}\\
+    \lambda &\succeq 0\\
+    c + A^T \lambda &=0
+  \end{align*}
+\end{multicols}
+\noindent
+\rule{\linewidth}{0.1mm}

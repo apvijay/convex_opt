@@ -1,0 +1,47 @@
+\noindent
+\textit{Misc}\\[5mm]
+\begin{align*}
+\log det X &= tr(logX)\\
+- \log det X^{-1} &= \log det X\\
+\mbox{Schur complement } S &= C - B^TA^{-1}B \quad \mbox{for }
+X = \begin{bmatrix}  A&B\\B^T&C \end{bmatrix} \\
+X \succ 0 \mbox{ iff } &A \succ 0 \mbox{ and } S \succ 0\\
+A \succ 0 \implies &X \succeq 0 \mbox{ iff } S \succeq 0
+\end{align*}
+%
+%
+\begin{table}[ht]
+\begin{tabular}{|>{$}l<{$}|>{$}l<{$}|}
+\hline
+\multicolumn{2}{|>{$}c<{$}|}{
+\partial / \partial X  operations
+}\\ \hline
+ & \\
+a^TXb & ab^T\\
+a^TX^Tb & ba^T\\
+b^TX^TXc & X(bc^T+cb^T)\\
+det(X) & det(X) (X^{-1})^T\\
+det(AXB) & det(AXB) (X^{-1})^T\\
+tr(X) & I\\
+tr(XA) & A^T\\
+tr(AXB) & A^TB^T\\
+tr(AX^TB) & BA\\
+tr(X^TA) & A\\
+tr(A^TX) & A\\
+tr(X^2) & 2X^T\\
+tr(X^TX) & 2X\\
+\ln det(X) & X^{-1}\\
+\prod eig(X) & det(X) (X^{-1})^T\\
+\sum eig(X) & I\\
+tr(X^{-1}A) & -X^{-1} A^T X^{-1}\\ \hline
+\end{tabular}
+\end{table}
+% \rule{\linewidth}{0.1mm}
+
+\begin{align*}
+\|z\|_a &= \sup\{u^T z | \|u\|_{a*} = 1\}\\
+\|X\|_{a,b}  &= \sup_{v \ne 0} \frac{\|Xv\|_a}{\|v\|_b}\\
+&=\sup \{\|Xv\|_a | \|v\|_b = 1\}\\
+&=\sup \{ u^TXv | \|u\|_{a*} = 1, \|v\|_b = 1\}
+\end{align*}
+

@@ -1,0 +1,176 @@
+\noindent
+\textbf{Bolzano-Weierstrass Theorem} A set \(A \subset R^d\) 
+is compact if and only if it is closed and bounded in \(R^d\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Tychonoff theorem} If \(A\) and \(B\) are compact sets, 
+so is their Cartesian product.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} A set is convex if and only if it contains all convex 
+combinations of its points.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Convex hull} Set of all convex combinations of points of a set.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Gauss-Lucas Theorem} Let \(f(z)\) be an \(n^{th}\) degree real 
+polynomial. Let \(z_1, z_2, \ldots, z_n\) be the roots of \(f(z)\). 
+Then \(n-1\) roots of \(f'(z)\) lies in 
+\(conv(\{z_1,z_2,\ldots,z_n\})\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Caratheodory Theorem} Let \(S \subset R^d\). Then any 
+\(x \in conv(S)\) can be represented as a convex combination of \(d+1\) 
+points of \(S\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} If \(A \subset R^d\) is convex, then \(A^o = int(A)\) is 
+convex.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} If \(A \subset R^d\) is compact, then \(conv(A)\) is 
+compact.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} Let \(A \subset R^n\) and \(u_0 \in int(A)\) be an 
+interior point. Then for any \(u_1 \in A\),
+\({u_\alpha = (1-\alpha)u_0 + \alpha u_1 \in int(A) 
+\quad 0 \le \alpha < 1. }\)
+\\
+\rule{\linewidth}{0.1mm}
+
+% \noindent
+% \textbf{Lemma} If \(A \subset R^n\) is convex, then \(A^o = int(A)\) is 
+% convex.
+% \\
+% \rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} If \(\{x_1,x_2,\ldots,x_{d+1}\} \subset R^d\) are affinely 
+independent points, then the convex hull 
+\(conv(\{x_1,x_2,\ldots,x_{d+1}\})\) has a 
+non-zero interior.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Theorem} Let \(A \subset R^d\) be a convex set. If 
+\(int(A) = \phi\), then there exists an affine subspace 
+\(L \subset R^d\) such that \(A \subset L\) and \(dim(L) < d\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Definition} \(F\) is a face of a closed convex set if there 
+exists a hyperplane \(H\) such that \(H\) isolates \(C\) and 
+\(F = H \cap C\). If \(F\) is a point, then \(F\) is called an 
+exposed point. A non-empty face \(F \ne C\) is called a proper face.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} Let \(K \subset R^d\) be a convex set with non-empty 
+interior. Let \(U \in \partial K\) be a point on the boundary. 
+Then there exists an 
+affine hyperplane \(H\) passing through \(U\) such that \(H\) isolates 
+\(K\). \(H\) is called a supporting hyperplane.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} Let \(K \subset R^d\) be a closed convex set. Let 
+\(U \in \partial K\). Then there exists a proper face \(F\) of \(K\) 
+such that \(U \in F\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Definition} Let \(A \subset R^d\). \(x \in A\) is an extreme 
+point of \(A\), if \(x = (a+b)/2, a \in A,b \in A\) implies 
+\(x = a = b\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} A compact set has at least one extreme point.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Krein-Millman Theorem} Let \(K \subset R^d\) be a compact 
+convex set. Then \(K = conv(ex(K))\), where \(ex(K)\) is the set of 
+extreme points of \(K\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Lemma} Let \(K \subset R^d\) be a compact convex set. Then the 
+linear function \(f(x) = a^T x :R^d \rightarrow R\) attains a maximum 
+or minimum on an extreme point of \(K\).
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textbf{Birkhoff-von Neumann Theorem} The vertices of the Birkhoff 
+polytope \(B_n\) are exactly the \(n \times n\) permutation matrices. 
+The polyhedron \(B_n\) of all \(n \times n\) doubly stochastic matrices 
+is called the Birkhoff polytope.
+\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Convex set}
+\begin{align*}
+  \theta x + (1-\theta) y \in C, \quad 0 \le \theta \le 1
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Affine set}
+\begin{align*}
+  \theta x + (1-\theta) y \in L, \quad \theta \in R
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Cone}
+\begin{align*}
+  \theta_1 x + \theta_2 y \in K, \quad \theta_1, \theta_2 \ge 0
+\end{align*}
+\textit{Proper Cone}: closed, convex, solid, pointed\\
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Dual cone}
+\begin{align*}
+  K^* = \{y \, | \, x^T y \ge 0 \mbox{ for all } x \in K\}
+\end{align*}
+\rule{\linewidth}{0.1mm}
+% \noindent
+
+% \rule{\linewidth}{0.1mm}
+
+% \noindent
+
+% \rule{\linewidth}{0.1mm}
+
+% \noindent
+
+% \rule{\linewidth}{0.1mm}

@@ -1,0 +1,85 @@
+\noindent
+\textit{Convex function}\\
+A function \(f : R^n \rightarrow R\) is convex if \(dom f\) is 
+convex and for all \(x\) and \(y \in dom f\) with 
+\(\theta \in [0,1]\),
+\[ f(\theta x + (1-\theta)y) \le \theta f(x) + (1-\theta) f(y)\]
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Properties of convex function}
+\begin{align*}
+  f(y) &\ge f(x) + \nabla f(x)^T(y-x) \quad \forall x,y \in dom f\\
+  \nabla^2f(x) &\succeq 0
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Examples of convex function}
+\begin{itemize}
+\item Linear and affine
+\item Exponential \(e^{ax} \quad a \in R\)
+\item Power \(x^a \quad a \ge 1\) and \(a \le 0\)
+\item Power of abs \(|x|^p \quad p \ge 1\)
+\item Negative entropy \(x \log x\)
+\item Norms
+\item Max function
+\item Quadratic-over-linear function
+\item Log-sum-exp
+\end{itemize}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Examples of concave functions}
+\begin{itemize}
+\item Logarithm \(\log x\)
+\item Geometric mean \( \bigg( \prod_i x_i \bigg) ^{1/n}\)
+\item Log-determinant \(\log \det X \quad X \in S_n^{++}\)
+\end{itemize}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Sublevel sets}
+\[S_\alpha = \{x \in dom f | f(x) \le \alpha\}\]
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Epigraph}
+\[epi f = \{(x,t) | x \in dom f, t \ge f(x) \}\]\\
+\[g(x) = \sup_{y \in C} f(x,y) \implies 
+epi g = \bigcap_{y \in C} epi f(\cdot,y)\]
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Operations that preserve convexity}
+\begin{enumerate}
+\item Non-negative weighted sum
+\item Composition with an affine mapping \(g(x) = f(Ax + b)\)
+\item Pointwise maximum and supremum \(\max\{f(x_1),\ldots,f(x_m)\}\)
+\item Composition \(h(g(x))\)
+  \[f''(x) = h''(g(x))g'(x)^2 + h'(g(x))g''(x)\]
+\(f\) is convex when \(g\) is convex, and \(h\) is convex and non-decreasing\\
+\(f\) is convex when \(g\) is concave, and \(h\) is convex and non-increasing
+\item Minimum over a non-empty convex set \(g(x) = \inf_{y \in C} f(x,y)\)
+\item Perspective \(g(x,t) = t f(x/t)\)
+\end{enumerate}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Conjugate function}
+\begin{align*}
+  f^*(y) &= \sup_{x \in dom f} (y^T x - f(x))\\
+  \mbox{e.g.} \quad f(x) &= \|x\|, 
+  \quad f^*(y) = 0, \quad \mbox{if } \|y\|_* \le 1,
+  \quad \mbox{else }\infty\\
+  \mbox{Conjugate of conjugate} \quad f^{**} &= f \\&\mbox{if } epi f
+  \mbox{ is closed (or) } f \mbox{ is convex and closed.}
+\end{align*}
+\rule{\linewidth}{0.1mm}
+
+\noindent
+\textit{Fenchel's/Young's inequality}
+\begin{align*}
+  f(x) + f^*(y) \ge x^T y
+\end{align*}
+\rule{\linewidth}{0.1mm}

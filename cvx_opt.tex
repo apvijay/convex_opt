@@ -1,0 +1,160 @@
+\noindent
+\textit{Optimization Problem}
+\begin{align*}
+\mbox{minimize }\quad &f_0(x)\\
+\mbox{subject to }\quad &f_i(x) \le 0, \quad i = 1, 2, \ldots, m\\
+&h_i(x) = 0, \quad i = 1, 2, \ldots, p\\
+\mbox{Domain} \qquad
+&D = \bigcap_{i=0}^m dom f_i \cap \bigcap_{i=0}^p dom h_i\\
+\mbox{Optimal value}\qquad
+&p^* = \inf\{f_0(x) | f_i(x) \le 0, h_i(x) = 0\}\\
+\mbox{Optimal set}\qquad 
+&x = \{x | f_0(x) = p^*, f_i(x) \le 0, h_i(x) = 0\}\\
+\epsilon-\mbox{suboptimal} \qquad
+&f_0(x) \le p^* + \epsilon, \quad \epsilon > 0
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+\noindent
+\textit{Feasibility Problem}
+\begin{align*}
+\mbox{find }\quad & x\\
+\mbox{subject to }\quad &f_i(x) \le 0, \quad i = 1, 2, \ldots, m\\
+&h_i(x) = 0, \quad i = 1, 2, \ldots, p
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+\noindent
+\textit{Epigraph Problem}
+\begin{align*}
+\mbox{minimize }\quad &t\\
+\mbox{subject to }\quad &f_0(x) - t \le 0\\
+&f_i(x) \le 0, \quad i = 1, 2, \ldots, m\\
+&h_i(x) = 0, \quad i = 1, 2, \ldots, p
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+\noindent
+\textit{Convex optimization}
+\begin{itemize}
+\item Objective function and inequality constraints are convex
+\item Equality constraints are affine \(h_i(x) = a_i^T x - b_i\)
+\end{itemize}
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Optimality criterion}\\
+\indent If \(x\) is optimal, then,
+\begin{align*}
+  \nabla f_0(x)^T (y-x) &\ge 0 \quad
+  \mbox{for all } y \in X \mbox{(feasible set)}\\
+  \nabla f_0(x) &= 0 \quad \mbox{for unconstrained problem}
+\end{align*}
+For any COP, any local optimal point is globally optimum.\\
+\rule{\linewidth}{0.1mm}
+%
+\noindent
+\textit{Linear Program} (LP)
+%
+\begin{align*}
+\mbox{minimize }\quad c^Tx &+ d \qquad
+\mbox{(General form)}  \\
+\mbox{subject to }\quad Gx &\preceq h \\
+Ax &= b
+\end{align*}
+%
+\begin{align*}
+\mbox{minimize }\quad &c^Tx \qquad
+\mbox{(Standard form)} \\
+\mbox{subject to }\quad Ax &= b \\
+x &\succeq 0
+\end{align*}
+%
+\begin{align*}
+\mbox{minimize }\quad &c^Tx \qquad
+\mbox{(Inequality form)} \\
+\mbox{subject to }\quad Ax &\preceq b 
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+\noindent
+\textit{Quadratic Program} (QP)
+\begin{align*}
+\mbox{minimize }\quad \frac{1}{2}x^T P x &+ q^T x + r\\
+\mbox{subject to }\quad Gx &\preceq h\\
+Ax &= b
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Quadratic Constrained Quadratic Program} (QCQP)
+\begin{align*}
+\mbox{minimize }\quad \frac{1}{2}x^T P_0 x &+ q_0^T x + r_0\\
+\mbox{subject to }\quad \frac{1}{2}x^T P_i x &+ q_i^T x + r_i \le 0, 
+\quad i = 1, 2, \ldots, m\\
+Ax &= b, \quad P_i \in S_+^{\,n}, \quad i = 0, 1, \ldots, m
+\end{align*}
+
+QCQP \(\rightarrow\) \((P_i = 0)\) \(\rightarrow\) QP  \(\rightarrow\) 
+\((P_0 = 0)\) \(\rightarrow\) LP\\
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Second Order Cone Problem} (SOCP)
+\begin{align*}
+\mbox{minimize }\quad &f^T x\\
+\mbox{subject to }\quad \| A_i x + b_i\|_2 &\le c_i^T + d, \quad i = 1, 2, \ldots, m\\
+Fx &= g
+\end{align*}
+
+SOCP \(\rightarrow\) \((A_i = 0)\) \(\rightarrow\) LP
+
+SOCP \(\rightarrow\) \((c_i = 0)\) \(\rightarrow\) QCQP (similar to)\\
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Geometric Program} (GP)
+\begin{align*}
+\mbox{minimize }\quad &f_0(x)\\
+\mbox{subject to }\quad f_i(x) &\le 1, \quad i = 1, 2, \ldots, m\\
+h_i(x) &= 1, \quad i = 1, 2, \ldots, p\\
+f_0, f_1,\ldots, f_m & \mbox{ are posynomials}\\
+h_1, h_2,\ldots, h_p & \mbox{ are monomials}
+\end{align*}
+
+Monomial : \[f:R_{++}^{\,n} \rightarrow R, \quad
+f(x) = c \, x_1^{\alpha_1} x_1^{\alpha_2} \ldots x_1^{\alpha_n}, 
+\quad c > 0, 
+\quad \alpha_i \in R\]
+
+Posynomial : (sum of monomials) 
+\[f(x) = 
+\sum_{k=1}^M c_k \, x_1^{\alpha_{k1}} x_1^{\alpha_{k2}} \ldots x_1^{\alpha_{kn}}, 
+\quad c_k \ge 0, 
+\quad \alpha_{ki} \in R\]
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Conic form Problem}
+\begin{align*}
+\mbox{minimize }\quad &c^Tx\\
+\mbox{subject to }\quad Fx + g &\preceq_K 0, \quad K\mbox{ is a proper cone}\\
+Ax &= b
+\end{align*}
+\rule{\linewidth}{0.1mm}
+%
+%
+\noindent
+\textit{Semi-definite Program} (SDP)
+\begin{align*}
+\mbox{minimize }\quad &c^Tx\\
+\mbox{subject to }\quad x_1 F_1 + x_2 F_2 +& \cdots + x_n F_n + G \preceq 0\\
+Ax &= b,\\
+G, F_1, F_2, \ldots, F_n \in S,& \quad A \in R^{p \times n}
+\end{align*}
+\rule{\linewidth}{0.1mm}

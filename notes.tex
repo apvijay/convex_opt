@@ -1,0 +1,33 @@
+\documentclass[12pt]{article}
+\usepackage{a4wide}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{array}
+
+% Header package
+\usepackage{fancyhdr}
+\setlength{\headheight}{15.2pt}
+\pagestyle{fancy}
+
+% force displaystyle
+\everymath{\displaystyle}
+
+%\includeonly{misc}
+\begin{document}
+%
+% Configure Header
+\renewcommand{\headrulewidth}{1.5pt}
+\lhead{\textit{Convex Optimization Cheatsheet}}
+\rhead{\thepage}
+
+%
+% Start
+\include{convexity}
+%\include{convexity2}
+\include{conv_func}
+\include{cvx_opt}
+\include{duality}
+\include{misc}
+
+\end{document}
